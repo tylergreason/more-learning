@@ -1,16 +1,18 @@
-$sidebarWidth: 20vw; 
+$sidebarWidth: 300px; 
 
-p {
+#sidebar {
     height: 100vh; 
-    width: $sidebarWidth; 
+    width: $sidebarWidth;  
     position: absolute; 
-    left: -$sidebarWidth;
+    left: -300px;
     top: 0px;
     margin: 0px; 
     background-color: goldenrod;
-    }
+    transition: left 0.3s ease-in-out;
+}
 
 
-.active {
+
+#sidebar.active {
     left: 0px; 
 }

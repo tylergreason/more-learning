@@ -21,11 +21,11 @@
         background-color: lightblue;
         .navbar-bottom-options {
             margin: auto; 
-            width: 50%; 
+            min-width: 50%; 
             justify-content: center;
             .navbar-bottom-option {
                 display: inline-block;
-                width: 100px;
+                max-width: 100px;
                 text-align: center;
             }
         }
