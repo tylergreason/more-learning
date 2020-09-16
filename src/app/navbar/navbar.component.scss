@@ -1,0 +1,33 @@
+:host {
+    display: block; 
+    height: 100px;
+    > div {
+        display: flex; 
+    }
+    .navbar-top {
+        height: 70%; 
+        .navbar-top-options, .navbar-bottom-options {
+            display: inline-flex; 
+            flex-flow: row; 
+            .navbar-top-option {
+                background-color: blue;
+                width: 20%;
+                height: 100%;
+            }
+        }
+    }
+    .navbar-bottom {
+        height: 30%; 
+        background-color: lightblue;
+        .navbar-bottom-options {
+            margin: auto; 
+            width: 50%; 
+            justify-content: center;
+            .navbar-bottom-option {
+                display: inline-block;
+                width: 100px;
+                text-align: center;
+            }
+        }
+    }
+}
