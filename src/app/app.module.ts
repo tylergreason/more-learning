@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [		
@@ -14,6 +15,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
    ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     AppRoutingModule
   ],
   providers: [],

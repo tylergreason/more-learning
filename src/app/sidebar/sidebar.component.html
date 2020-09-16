@@ -2,5 +2,7 @@
     id='sidebar'
     (click)="closeSidebar()"
 >
-  sidebar works!
+  <div class="category" *ngFor="let cat of categories | async">
+      id: {{cat.id}} - category name: {{ cat.name }}
+  </div>
 </div>
