@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+    // sidebar; 
+  constructor(
+  ) { }
+
+
+  toggleSidebar = () => {
+      this.sidebar.classList.toggle('active'); 
+  }
 
   ngOnInit() {
+      this.sidebar = document.getElementById('sidebar'); 
   }
 
 }
