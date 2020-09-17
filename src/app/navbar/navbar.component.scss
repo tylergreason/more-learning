@@ -1,11 +1,26 @@
+@import "../style-variables";
+
 :host {
     display: block; 
-    height: 100px;
-    > div {
-        display: flex; 
-    }
+    height: $navbar-height;
+    
     .navbar-top {
+        display: grid;
         height: 70%; 
+        grid-template-columns: [catalog-button] 10% [brand-image] 15% [searchbar] 50% [buttons] 25%; 
+        img {
+            $border-width: 10px; 
+            overflow: auto;
+            height: $navbar-height - $border-width; 
+            vertical-align: bottom;
+            // margin-left: $border-width; 
+            border: $border-width solid rgba(255,255,255,0.5);
+            // box-sizing: border-box;
+            background-color: rgba(255,255,255,0.5);
+            // padding: 10px; 
+
+        }
+
         .navbar-top-options, .navbar-bottom-options {
             display: inline-flex; 
             flex-flow: row; 
@@ -17,6 +32,7 @@
         }
     }
     .navbar-bottom {
+        display: flex; 
         height: 30%; 
         background-color: lightblue;
         .navbar-bottom-options {
