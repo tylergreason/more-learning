@@ -12,10 +12,8 @@
 
   <div class="category-list" *ngFor="let cat of categories">
       id: {{cat.id}} - category name: {{ cat.name }}
-      <span *ngIf="cat.sub-categories">
-        <div *ngFor="let sub of cat.sub-categories">
-          {{sub.name}} sfljlklj
+        <div *ngFor="let sub of cat['sub-categories']">
+          {{sub.name}} 
         </div>
-      </span>
   </div>
 </div>
