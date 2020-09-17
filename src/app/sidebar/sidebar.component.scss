@@ -25,8 +25,11 @@ $sidebarWidth: 300px;
 
 .sub-category {
     padding: 0px 20px; 
+    overflow: hidden;
 }
 
-.hidden {
-    height: 0px; 
+.collapsed {
+    & + .sub-category-container, li {
+            display: none; 
+    }
 }

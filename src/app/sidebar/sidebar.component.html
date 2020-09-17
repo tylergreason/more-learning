@@ -12,18 +12,21 @@
 
   <div class="category-container" *ngFor="let cat of categories">
     <span 
-    class="category" 
+    class="category collapsed" 
     (click)="toggleCategory($event)"
     data-id="{{cat.id}}"
     >
       {{ cat.name }}
     </span>
-    <li 
-    class="sub-category" 
-    *ngFor="let sub of cat['sub-categories']"
-    data-id="{{sub.id}}"
-    >
+    <div class="sub-category-container">
+
+      <li 
+      class="sub-category" 
+      *ngFor="let sub of cat['sub-categories']"
+      data-id="{{sub.id}}"
+      >
       {{sub.name}} 
     </li>
+  </div>
   </div>
 </div>
