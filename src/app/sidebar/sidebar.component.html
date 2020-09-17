@@ -1,8 +1,21 @@
 <div
     id='sidebar'
-    (click)="closeSidebar()"
+    class="active"
+    (click)="closeSidebar($event)"
 >
-  <div class="category" *ngFor="let cat of categories | async">
+
+  <select class="category-select">
+    <option *ngFor="let cat of categories">
+      {{cat.id}} {{ cat.name }}
+    </option>
+  </select>
+
+  <div class="category-list" *ngFor="let cat of categories">
       id: {{cat.id}} - category name: {{ cat.name }}
+      <span *ngIf="cat.sub-categories">
+        <div *ngFor="let sub of cat.sub-categories">
+          {{sub.name}} sfljlklj
+        </div>
+      </span>
   </div>
 </div>

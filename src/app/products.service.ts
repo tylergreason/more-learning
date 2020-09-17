@@ -1,3 +1,4 @@
+import { otherCategories } from './../assets/otherCategories';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
@@ -10,7 +11,8 @@ export class ProductsService {
       private http: HttpClient,
   ) { }
 
-  getCategories(){ 
-      return this.http.get('/assets/categories.json')
+  getCategories(){     
+    return otherCategories; 
+    return this.http.get('/assets/categories.json')
   }
 }

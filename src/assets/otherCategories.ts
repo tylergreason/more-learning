@@ -1,4 +1,4 @@
-[
+export const otherCategories = [
     {
         "name": "category 1",
         "id" : 1,

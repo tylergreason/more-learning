@@ -8,27 +8,24 @@ import { ProductsService } from '../products.service'
 })
 export class SidebarComponent implements OnInit {
 
-  categories;  
+  categories;
   constructor(
       private productsService: ProductsService,
   ) { 
-
+    this.categories = this.productsService.getCategories();
   }
 
-  closeSidebar  = () => {
-    this.sidebar.classList.remove('active');
+  closeSidebar  = (e) => {
+    // required target to be sidebar because stopPropagation was not working
+    e.target === this.sidebar 
+    ?
+    this.sidebar.classList.remove('active')
+    :
+    null
   }
 
   ngOnInit() {
     this.sidebar = document.getElementById('sidebar'); 
-    this.categories = this.productsService.getCategories();
-    this.categories.forEach(cat => {
-        console.log(cat);
-        cat.forEach(c => console.log(c))
-        
-        cat.subCategories = cat["sub-categories"]
-
-    })
   }
 
 }
