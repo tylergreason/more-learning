@@ -6,6 +6,10 @@ export const otherCategories = [
             {
                 "id": "2",
                 "name": "category 1 sub-category 1"
+            },
+            {
+                "id": "5",
+                "name": "category 1 sub-category 2"
             }
         ]
     },

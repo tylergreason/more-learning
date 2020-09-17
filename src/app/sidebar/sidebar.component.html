@@ -10,10 +10,20 @@
     </option>
   </select>
 
-  <div class="category-list" *ngFor="let cat of categories">
-      id: {{cat.id}} - category name: {{ cat.name }}
-        <div *ngFor="let sub of cat['sub-categories']">
-          {{sub.name}} 
-        </div>
+  <div class="category-container" *ngFor="let cat of categories">
+    <span 
+    class="category" 
+    (click)="toggleCategory($event)"
+    data-id="{{cat.id}}"
+    >
+      {{ cat.name }}
+    </span>
+    <li 
+    class="sub-category" 
+    *ngFor="let sub of cat['sub-categories']"
+    data-id="{{sub.id}}"
+    >
+      {{sub.name}} 
+    </li>
   </div>
 </div>

@@ -24,6 +24,14 @@ export class SidebarComponent implements OnInit {
     null
   }
 
+  toggleCategory = e => {
+    const targetCategory = this.categories.filter(cat => cat["id"] === parseInt(e.target.id))[0];
+    targetCategory['sub-categories'].forEach(sub => {
+      const targetEle = document.getElementById(sub.id);
+      targetEle.hidden = !targetEle.hidden;
+    })
+  }
+
   ngOnInit() {
     this.sidebar = document.getElementById('sidebar'); 
   }

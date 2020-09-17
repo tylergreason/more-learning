@@ -16,3 +16,17 @@ $sidebarWidth: 300px;
 #sidebar.active {
     left: 0px; 
 }
+
+.category {
+    border: 1px solid black;
+    padding: 0px 10px; 
+    display: inline-block;
+}
+
+.sub-category {
+    padding: 0px 20px; 
+}
+
+.hidden {
+    height: 0px; 
+}
