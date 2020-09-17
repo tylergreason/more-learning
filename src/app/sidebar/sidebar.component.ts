@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit {
       private productsService: ProductsService,
   ) { 
     this.categories = this.productsService.getCategories();
+    this.returnedData = {}; 
   }
 
   closeSidebar  = (e) => {
@@ -35,6 +36,9 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.sidebar = document.getElementById('sidebar'); 
+    this.productsService.testGetFetch().subscribe(data => this.returnedData = data.total); 
+    console.log(this.returnedData);
+    
   }
 
 }
