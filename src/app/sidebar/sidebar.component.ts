@@ -8,12 +8,14 @@ import { ProductsService } from '../products.service'
 })
 export class SidebarComponent implements OnInit {
 
-  categories;
+  categories; 
+  returnedData; 
+  sidebar;
   constructor(
       private productsService: ProductsService,
   ) { 
     this.categories = this.productsService.getCategories();
-    this.returnedData = {}; 
+    this.returnedData = ''; 
   }
 
   closeSidebar  = (e) => {
