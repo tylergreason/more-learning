@@ -1,68 +1,83 @@
 @import "../style-variables";
 
 :host {
-    display: block; 
+    // display: block; 
+}
+
+.navbar-wrapper {
+    display: grid; 
     height: $navbar-height;
     $navbar-top-height: $navbar-height * 0.63; 
     $navbar-bottom-height: $navbar-height - $navbar-top-height;
+    grid-template-columns: [catalog-button] 10% [brand-image] 250px [searchbar] 50% [buttons] 25%; 
+    grid-template-rows: [top-row] $navbar-top-height [bottom-row] $navbar-bottom-height; 
 
-    .navbar-top {
-        display: grid;
-        height: $navbar-top-height; 
-        max-height: $navbar-top-height; 
-        grid-template-columns: [catalog-button] 10% [brand-image] 15% [searchbar] 50% [buttons] 25%; 
-        .search-container, span, button, input {
-            max-height: $navbar-top-height;
+    .button-catalogs {
+        grid-column: 1/2; 
+        grid-row: 1/2;
+    }
+
+    .logo {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        align-self: end; 
+        $border-width: $navbar-bottom-height/2; 
+        overflow: auto;
+        // height: $navbar-height - $border-width; 
+        max-height: calc(100% - $border-width);
+        margin-bottom: 0px;
+        width: 100%;
+        vertical-align: bottom;
+        // margin-top: $border-width;
+        border-left: $border-width solid rgba(255,255,255,0.5);
+        border-top: $border-width solid rgba(255,255,255,0.5);
+        border-right: $border-width solid rgba(255,255,255,0.5);
+        box-sizing: border-box;
+        background-color: rgba(255,255,255,0.5);
+    }
+
+    .search-container {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        display: flex; 
+        align-items: center;
+        input, .search-icon {
+            height: $navbar-top-height * .3; 
+            // display: block;
+            // height: $navbar-top-height * .25; 
+            border: none; 
+            background-color: #f1f2f3;
+            // margin-top: 50px;
         }
-        .logo {
-            $border-width: $navbar-bottom-height/2; 
-            overflow: auto;
-            height: $navbar-height - $border-width; 
+        .search-icon {
+            border-radius: 10px 0px 0px 10px;
+            padding-left: 10px; 
+        }
+        input {
+            border-radius: 0px 10px 10px 0px;
             width: 100%;
-            vertical-align: bottom;
-            margin-top: $navbar-bottom-height;
-            border: $border-width solid rgba(255,255,255,0.5);
-            box-sizing: border-box;
-            background-color: rgba(255,255,255,0.5);
-        }
-
-        .search-container {
-            height: $navbar-top-height * .25; 
-            display: flex; 
-            align-items: center;
-            input, .search-icon {
-                // display: block;
-                // height: $navbar-top-height * .25; 
-                border: none; 
-                background-color: #f1f2f3;
-                height: 100%;
-                margin-top: 50px;
-            }
-            .search-icon {
-                border-radius: 10px 0px 0px 10px;
-                padding-left: 10px; 
-            }
-            input {
-                border-radius: 0px 10px 10px 0px;
-            }
-        }
-
-        .navbar-top-options, .navbar-bottom-options {
-            display: inline-flex;
-            .navbar-top-option {
-                background-color: blue;
-                width: 20%;
-                height: 100%;
-            }
         }
     }
-    .navbar-bottom {
-        display: flex; 
-        height: $navbar-bottom-height; 
-        background-color: lightblue;
+
+    .navbar-top-options {
+        grid-column: 4/5; 
+        grid-row: 1/2; 
+    }
+    .navbar-top-options, .navbar-bottom-options {
+        display: inline-flex;
+        .navbar-top-option {
+            background-color: blue;
+            width: 20%;
+            height: 100%;
+        }
+    }
+
+
         .navbar-bottom-options {
+            grid-column: 3/4; 
+            grid-row: 2/3;
             margin: auto; 
-            margin-left: 100vw * .25; 
+            // margin-left: 100vw * .25; 
             justify-content: center;
             .navbar-bottom-option {
                 display: inline-block;
@@ -72,4 +87,16 @@
             }
         }
     }
+
+.navbar-bottom {
+    background-color: lightblue;
+    grid-column: 1/5; 
+    grid-row: 2/3;
+    z-index: -1;
+}
+.navbar-top {
+    background-color: white ;
+    grid-column: 1/5; 
+    grid-row: 1/2;
+    z-index: -1;
 }
