@@ -2,7 +2,12 @@
     <span class="navbar-bottom"></span>
     <span class="navbar-top"></span>
     <!-- <div class="navbar-top"> -->
-        <button class="button-catalogs" (click)="toggleSidebar()">Catalogs</button>
+        <div class="button-wrapper button-catalogs">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            <button (click)="toggleSidebar()">
+                Catalogs
+            </button>
+        </div>
         <img class="logo" alt="" src="../../assets/Screen Shot 2020-09-17 at 4.15.58 PM.png">
         
         <div class="search-container">
@@ -15,22 +20,37 @@
                 > 
         </div>
         <span class='navbar-top-options'>
-            <button class='navbar-top-option'>option 1</button>
-            <button class='navbar-top-option'>option 2</button>
-            <button class='navbar-top-option'>option 3</button>
-            <button class='navbar-top-option'>option 4</button>
-            <button class='navbar-top-option'>option 5</button>
+            <div class="button-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="catalog-icon" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <button>Home</button>
+            </div>
+            <div class="button-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="catalog-icon" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <button>Orders</button>
+            </div>
+            <div class="button-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="catalog-icon" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <button>Account</button>
+            </div>
+            <div class="button-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="catalog-icon" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <button>Logout</button>
+            </div>
+            <div class="button-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="catalog-icon" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <button>Cart</button>
+            </div>
         </span>
     <!-- </div> -->
 
     <!-- <div class="navbar-bottom"> -->
         <span class='navbar-bottom-options'>
-            <button class='navbar-bottom-option'>option 1</button>
-            <button class='navbar-bottom-option'>option 2</button>
-            <button class='navbar-bottom-option'>option 3</button>
-            <button class='navbar-bottom-option'>option 4</button>
-            <button class='navbar-bottom-option'>option 5</button>
-            <button class='navbar-bottom-option'>option 6</button>
+            <button>Place Order</button>
+            <button>Print-On-Demand</button>
+            <button>Contacts</button>
+            <button>Instruction Sheet</button>
+            <button>Tracking</button>
+            <button>Web Reports</button>
         </span>
     <!-- </div> -->
 
