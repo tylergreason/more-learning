@@ -3,27 +3,52 @@
 :host {
     display: block; 
     height: $navbar-height;
-    
+    $navbar-top-height: $navbar-height * 0.63; 
+    $navbar-bottom-height: $navbar-height - $navbar-top-height;
+
     .navbar-top {
         display: grid;
-        height: 70%; 
+        height: $navbar-top-height; 
+        max-height: $navbar-top-height; 
         grid-template-columns: [catalog-button] 10% [brand-image] 15% [searchbar] 50% [buttons] 25%; 
-        img {
-            $border-width: 10px; 
+        .search-container, span, button, input {
+            max-height: $navbar-top-height;
+        }
+        .logo {
+            $border-width: $navbar-bottom-height/2; 
             overflow: auto;
             height: $navbar-height - $border-width; 
+            width: 100%;
             vertical-align: bottom;
-            // margin-left: $border-width; 
+            margin-top: $navbar-bottom-height;
             border: $border-width solid rgba(255,255,255,0.5);
-            // box-sizing: border-box;
+            box-sizing: border-box;
             background-color: rgba(255,255,255,0.5);
-            // padding: 10px; 
+        }
 
+        .search-container {
+            height: $navbar-top-height * .25; 
+            display: flex; 
+            align-items: center;
+            input, .search-icon {
+                // display: block;
+                // height: $navbar-top-height * .25; 
+                border: none; 
+                background-color: #f1f2f3;
+                height: 100%;
+                margin-top: 50px;
+            }
+            .search-icon {
+                border-radius: 10px 0px 0px 10px;
+                padding-left: 10px; 
+            }
+            input {
+                border-radius: 0px 10px 10px 0px;
+            }
         }
 
         .navbar-top-options, .navbar-bottom-options {
-            display: inline-flex; 
-            flex-flow: row; 
+            display: inline-flex;
             .navbar-top-option {
                 background-color: blue;
                 width: 20%;
@@ -33,14 +58,15 @@
     }
     .navbar-bottom {
         display: flex; 
-        height: 30%; 
+        height: $navbar-bottom-height; 
         background-color: lightblue;
         .navbar-bottom-options {
             margin: auto; 
-            min-width: 50%; 
+            margin-left: 100vw * .25; 
             justify-content: center;
             .navbar-bottom-option {
                 display: inline-block;
+                min-width: 50px;
                 max-width: 100px;
                 text-align: center;
             }
